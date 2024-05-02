@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程</title>
+    <link rel="stylesheet" href="css/exampleProblem.css">
+    <link rel="stylesheet" href="css/markdown.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="header__navbar">
+            <div class="header_Cloud"></div>
+            <div class="header_navitem">
+                <a href="index.html">首&nbsp页</a>
+                <a class="header_hover" href="lesson.html">课&nbsp程</a>
+            </div>
+        </div>
+    </div>
+    <div class="blank"></div>
+    <div class="playGround">
+        <div class="problem">
+            <div class="markdown">
+                <div id="markdown-content" data='# 奇数求和   \n## 题目描述  \n计算非负整数 $m$ 到 $n$（包括 $m$ 和 $n$）之间的所有奇数的和，其中，$m$ 不大于 $n$，且 $n$ 不大于 $300$。例如 $m=3,n=12,$ 其和则为：$3+5+7+9+11=35$。\n## 输入格式\n两个数 $m$ 和 $n$，两个数以一个空格分开，其中 $0 \le m \le n \le 300$。\n## 输出格式\n输出一行，包含一个整数，表示 $m$ 到 $n$（包括 $m$ 和 $n$）之间的所有奇数的和。\n## 样例 #1\n### 样例输入 #1\n```7 15```\n### 样例输出 #1\n```55```'>
+                </div>
+            </div>
+        </div>
+        <div class="editGround">
+            <div class="aiHelper">
+                <div id="chat-container"></div>
+                <textarea id="input-message" placeholder="输入消息..." rows="4" style="resize: none;"></textarea>
+                <button onclick="sendMessage()">发送</button>                
+            </div>
+            <div class="editor">
+                <div id="uiPanel">
+                    <div class="uiRow">
+                        <label for="themeSelector">选择主题:</label>
+                        <select id="themeSelector">
+                            <option value="github">GitHub</option>
+                            <option value="monokai">Monokai</option>
+                            <option value="tomorrow">Tomorrow</option>
+                            <option value="kuroir">Kuroir</option>
+                            <option value="twilight">Twilight</option>
+                            <option value="xcode">XCode</option>
+                        </select>
+                    </div>
+                    <div class="uiRow">
+                        <label for="fontSizeSelector">字体大小:</label>
+                        <select id="fontSizeSelector">
+                            <option value="12px">12px</option>
+                            <option value="14px">14px</option>
+                            <option value="16px">16px</option>
+                            <option value="18px">18px</option>
+                            <option value="20px">20px</option>
+                        </select>
+                    </div>
+                    <div class="uiRow">
+                        <label for="languageSelector">编程语言:</label>
+                        <select id="languageSelector">
+                            <option value="c_cpp">C/C++</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="editor" style="height: 400px; width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- 渲染markdown -->
+<script src="js/header.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/move.js"></script>
+<script src="js/editor.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/renderMarkdown.js"></script>
+</html>

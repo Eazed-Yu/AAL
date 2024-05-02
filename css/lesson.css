@@ -1,0 +1,107 @@
+/* 全局无下划线 */
+a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    flex-wrap: wrap;
+    height: auto;
+    background: linear-gradient(200deg,#a8edea, #fed6e3);
+    display: inline;
+}
+
+
+/* 导航栏 */
+.header {
+    opacity:0.9;
+    display: flex;
+    width: 100%;
+    height: 66px;
+    position: fixed;
+    z-index: 999;
+    background-color: rgba(17, 17, 17, 0.75);
+    box-shadow: 0px 3px 7px 0px rgb(0 0 0 / 35%);
+}
+
+
+.header__navbar {
+    display: flex;
+    width: 800px;
+    height: 66px;
+    display: inline-block;
+    list-style-type: none;
+    padding-right: 10px;
+    margin-left: 40px;
+}
+
+.header_navitem a {
+    position: relative;
+    left: 240px;
+    top: 0px;
+    float: left;
+    width: 40px;
+    height: 66px;
+    margin: 0 29px;
+    margin: 0 30px !important;
+    line-height: 66px;
+    font-size: 17px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #ccc;
+    text-align: center;
+    cursor: pointer;
+}
+
+.header_navitem a:hover {
+    text-shadow: 0 0 10px #69e0ff, 0 0 40px #69e0ff, 0 0 40px #69e0ff;
+    color: #fff;
+}
+
+.header_hover {
+    text-shadow: 0 0 10px #69e0ff, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
+    color: white;
+}
+
+.header_Cloud {
+    position: absolute;
+    z-index: 1;
+    transition: all 0.2s ease-out 0s;
+    background-color: rgb(105, 224, 255);
+    height: 5px;
+    left: 410px;
+    width: 40px;
+    top: 0px;
+}
+
+.problemSet {
+    width: 100%;
+    height: 100px;
+}
+
+.blank {
+    width: 100%;
+    height: 66px;
+}
+
+.problemSet .problem {
+    display: flex;
+    width: 100%;
+    height: 66px;
+}
+
+#exampleProblem {
+    height: 50px;
+    width: 100%;
+}
+
+.problemSet {
+    display: flex;
+    
+}
+
+.problem {
+    margin: 50px;
+}

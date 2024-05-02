@@ -1,0 +1,235 @@
+/* 全局无下划线 */
+a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    flex-wrap: wrap;
+    height: auto;
+    background: linear-gradient(200deg,#a8edea, #fed6e3);
+    display: inline;
+}
+
+
+/* 导航栏 */
+.header {
+    opacity:0.9;
+    display: flex;
+    width: 100%;
+    height: 66px;
+    position: fixed;
+    z-index: 999;
+    background-color: rgba(17, 17, 17, 0.75);
+    box-shadow: 0px 3px 7px 0px rgb(0 0 0 / 35%);
+}
+
+
+.header__navbar {
+    display: flex;
+    width: 800px;
+    height: 66px;
+    display: inline-block;
+    list-style-type: none;
+    padding-right: 10px;
+    margin-left: 40px;
+}
+
+.header_navitem a {
+    position: relative;
+    left: 240px;
+    top: 0px;
+    float: left;
+    width: 40px;
+    height: 66px;
+    margin: 0 29px;
+    margin: 0 30px !important;
+    line-height: 66px;
+    font-size: 17px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #ccc;
+    text-align: center;
+    cursor: pointer;
+}
+
+.header_navitem a:hover {
+    text-shadow: 0 0 10px #69e0ff, 0 0 40px #69e0ff, 0 0 40px #69e0ff;
+    color: #fff;
+}
+
+.header_hover {
+    text-shadow: 0 0 10px #69e0ff, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
+    color: white;
+}
+
+.header_Cloud {
+    position: absolute;
+    z-index: 1;
+    transition: all 0.2s ease-out 0s;
+    background-color: rgb(105, 224, 255);
+    height: 5px;
+    left: 410px;
+    width: 40px;
+    top: 0px;
+}
+
+.blank {
+    width: 100%;
+    height: 66px;
+}
+
+.playGround {
+    width: 100%;
+    flex-wrap: wrap;
+    height: 1000px;
+    display: flex;
+}
+
+.problem {
+    background: white;
+    width: 40%;
+    height: 100%;
+    margin: 25px;
+}
+
+.editGround {
+    width: 50%;
+    height: 100%;
+    display: inline;
+    margin: 25px;
+}
+
+.aiHelper {
+    width: 100%;
+    height: auto;
+    margin: 25px;
+}
+
+.editor {
+    width: 100%;
+    height: 40%;
+    margin: 25px;
+}
+
+.editor {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%; /* 确保编辑器在容器内充满宽度 */
+}
+
+.uiPanel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+
+.uiRow {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+.uiRow label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+select {
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: white;
+    border: 1px solid #ccc;
+}
+
+#editor {
+    height: 400px;
+    flex-grow: 1;
+    border: 1px solid #ddd;
+}
+
+/* 媒体查询以适应不同屏幕尺寸 */
+@media (max-width: 768px) {
+    #editor {
+        height: 300px; /* 在小屏幕上调整编辑器的高度 */
+    }
+}
+
+
+/* 媒体查询以适应不同屏幕尺寸 */
+@media (max-width: 768px) {
+    #editor {
+        height: 300px; /* 在小屏幕上调整编辑器的高度 */
+    }
+}
+
+#chat-container {
+    height: 300px; /* 设置默认高度为300像素 */
+    overflow-y: auto; /* 当内容超出高度时显示滚动条 */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f0f0f0; /* 设置背景颜色 */
+}
+
+
+/* 输入框和发送按钮的样式 */
+input[type="text"], button {
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    display: inline-block;
+}
+
+/* 调整输入框宽度以适应屏幕 */
+input[type="text"] {
+    width: calc(100% - 240px);
+}
+
+/* 发送按钮的宽度 */
+button {
+    width: 100px;
+}
+
+/* 消息框样式，包括背景颜色和边框圆角 */
+div.message {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+}
+
+/* 用户消息的样式，文本右对齐并改变背景颜色 */
+div.user {
+    text-align: right;
+    background-color: #dcf8c6;
+}
+
+#markdown-content {
+    margin: 10px;
+}
+
+#input-message {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* 使宽度包含padding和border */
+    font-size: 16px; /* 提高字体大小以提高可读性 */
+}
+
+#input-message:focus {
+    border-color: #66afe9;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(102,175,233,0.6);
+}

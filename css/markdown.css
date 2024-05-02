@@ -1,0 +1,13 @@
+.markdown h1, .markdown h2, .markdown h3 {
+    color: navy;  /* 标题颜色 */
+}
+
+.markdown code {
+    background-color: #f4f4f4; /* 代码块背景色 */
+    padding: 2px 4px;
+    border-radius: 5px;
+}
+
+.markdown a {
+    color: #06c; /* 链接颜色 */
+}
