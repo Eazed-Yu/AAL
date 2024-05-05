@@ -7,7 +7,18 @@
     <title>课程</title>
     <link rel="stylesheet" href="css/exampleProblem.css">
     <link rel="stylesheet" href="css/markdown.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js/styles/default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js/lib/highlight.min.js"></script>
+    <!-- 引入 KaTeX 的 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+
+    <!-- 引入 KaTeX 的 JavaScript 库 -->
+    <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+
+
+
 
 </head>
 
@@ -25,7 +36,35 @@
     <div class="playGround">
         <div class="problem">
             <div class="markdown">
-                <div id="markdown-content" data='# 奇数求和   \n## 题目描述  \n计算非负整数 $m$ 到 $n$（包括 $m$ 和 $n$）之间的所有奇数的和，其中，$m$ 不大于 $n$，且 $n$ 不大于 $300$。例如 $m=3,n=12,$ 其和则为：$3+5+7+9+11=35$。\n## 输入格式\n两个数 $m$ 和 $n$，两个数以一个空格分开，其中 $0 \le m \le n \le 300$。\n## 输出格式\n输出一行，包含一个整数，表示 $m$ 到 $n$（包括 $m$ 和 $n$）之间的所有奇数的和。\n## 样例 #1\n### 样例输入 #1\n```7 15```\n### 样例输出 #1\n```55```'>
+                <div id="markdown-content">
+# 奇数求和
+
+## 题目描述
+
+计算非负整数 $m$ 到 $n$（包括 $m$ 和 $n$）之间的所有奇数的和，其中，$m$ 不大于 $n$，且 $n$ 不大于 $300$。例如 $m=3,n=12,$
+其和则为：$3+5+7+9+11=35$。
+
+## 输入格式
+
+两个数 $m$ 和 $n$，两个数以一个空格分开，其中 $0 \le m \le n \le 300$。
+
+## 输出格式
+
+输出一行，包含一个整数，表示 $m$ 到 $n$（包括 $m$ 和 $n$）之间的所有奇数的和。
+
+## 样例 #1
+
+### 样例输入 #1
+
+```
+7 15
+```
+
+### 样例输出 #1
+
+```
+55
+```
                 </div>
             </div>
         </div>
@@ -33,7 +72,7 @@
             <div class="aiHelper">
                 <div id="chat-container"></div>
                 <textarea id="input-message" placeholder="输入消息..." rows="4" style="resize: none;"></textarea>
-                <button onclick="sendMessage()">发送</button>                
+                <button onclick="sendMessage()">发送</button>
             </div>
             <div class="editor">
                 <div id="uiPanel">
@@ -78,4 +117,5 @@
 <script src="js/editor.js"></script>
 <script src="js/chat.js"></script>
 <script src="js/renderMarkdown.js"></script>
+
 </html>
