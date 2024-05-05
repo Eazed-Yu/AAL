@@ -1,6 +1,5 @@
-const items = document.querySelectorAll('.list-item');
-const playGround = document.querySelector('.playground');
-const list = document.querySelector('.list');
+const animationMap = new Map();
+
 
 function createAnimation(scrollStart, scrollEnd, valueStart, valueEnd) {
     return function (scroll) {
@@ -14,14 +13,15 @@ function createAnimation(scrollStart, scrollEnd, valueStart, valueEnd) {
     }
 }
 
-const animationMap = new Map();
 
-function getDomAnimation(scrollStart, scrollEnd, dom) {
 
-    const scaleAnimation = createAnimation(scrollStart, scrollEnd / 3, 0.1, 1);
-    const opacityAnimtion = createAnimation(scrollStart, scrollEnd / 3, 0, 1);
-    const xAnimation = createAnimation(scrollStart, scrollEnd / 3, list.offsetLeft + list.clientWidth / 2 - dom.offsetLeft - dom.clientWidth / 2, 0);
-    const yAnimation = createAnimation(scrollStart, scrollEnd / 3, list.offsetTop + list.clientHeight / 2 - dom.offsetTop - dom.clientHeight / 2, 0);
+function getDomAnimation(scrollStart, scrollEnd, dom, container) {
+
+    const scaleAnimation = createAnimation(scrollStart, scrollEnd, 0.1, 1);
+    const opacityAnimtion = createAnimation(scrollStart, scrollEnd, 0, 1);
+    
+    const xAnimation = createAnimation(scrollStart, scrollEnd, container.offsetLeft + container.clientWidth / 2 - dom.offsetLeft - dom.clientWidth / 2, 0);
+    const yAnimation = createAnimation(scrollStart, scrollEnd, container.offsetTop + container.clientHeight / 2 - dom.offsetTop - dom.clientHeight / 2, 0);
 
     const opacity = function (scroll) {
         return opacityAnimtion(scroll);
@@ -30,8 +30,6 @@ function getDomAnimation(scrollStart, scrollEnd, dom) {
     const transform = function (scroll) {
         return `translate(${xAnimation(scroll)}px, ${yAnimation(scroll)}px) scale(${scaleAnimation(scroll)})`;
     }
-
-
     return {
         opacity,
         transform,
@@ -39,13 +37,18 @@ function getDomAnimation(scrollStart, scrollEnd, dom) {
 }
 
 function updateMap() {
-    animationMap.clear();
-    const playGroundRect = playGround.getBoundingClientRect();
-    const scrollStart = playGroundRect.top + window.scrollY;
-    const scrollEnd = playGroundRect.bottom + window.scrollY - window.innerHeight;
-    for (const item of items) {
-        animationMap.set(item, getDomAnimation(scrollStart, scrollEnd, item))
-    }
+    animationMap.clear()
+    const playGrounds = document.querySelectorAll('.playground');
+    playGrounds.forEach( playGround => {
+        const playGroundRect = playGround.getBoundingClientRect();
+        const scrollStart = playGroundRect.top + window.scrollY;
+        const scrollEnd = playGroundRect.bottom + window.scrollY - window.innerHeight * 2;
+        const container = playGround.querySelector(".animation-container");
+        const items = container.children
+        for (const item of items) {
+            animationMap.set(item, getDomAnimation(scrollStart, scrollEnd, item, container))
+        }
+    } )
 }
 
 function updateStyles() {
@@ -57,7 +60,9 @@ function updateStyles() {
     }
 }
 
-updateMap();
-updateStyles();
 
+window.addEventListener('load', function () {
+    updateMap();
+    updateStyles();
+})
 window.addEventListener('scroll', updateStyles);
