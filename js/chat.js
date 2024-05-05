@@ -13,10 +13,11 @@ function displayMessage(message, isUser) {
 
 // 发送消息并接收AI响应的函数
 async function sendMessage() {
+    const preTalk = ''
     const input = document.getElementById('input-message');
     const problem = document.getElementsByClassName('markdown').textContent
     const userCode = editor.getValue();
-    const systemPrompt = '帮助用户解决代码问题' + '问题：' + '```' +  problem + '```' + '用户代码：' + '```' +  userCode + '```' + '用户问题：' + '```' +  input.value + '```'
+    const systemPrompt = '```' + '你对话的对象是用户，使用第二人称对话、不要使用任何markdown等格式，帮助用户解决代码问题' + '对话历史：' + preTalk + '题目：' +  problem + '用户代码：' +  userCode + '用户问题：' +  input.value + '```'
     const message = input.value
 
 
