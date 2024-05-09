@@ -35,6 +35,7 @@ function sendMessage() {
 
     const evtSource = new EventSource(`http://localhost:8080/ai/generateStream?message=${encodeURIComponent(systemPrompt)}`);
 
+    // TODO: 有bug
     evtSource.onmessage = (event) => {
 
         const eventData = JSON.parse(event.data); // 解析JSON字符串为JavaScript对象
