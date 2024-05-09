@@ -112,9 +112,6 @@ body {
     width: 100%;
     height: 40%;
     margin: 25px;
-}
-
-.editor {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -124,7 +121,8 @@ body {
 .uiPanel {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    gap: 10px;
     align-items: center;
     margin-bottom: 10px;
     padding: 10px;
@@ -171,6 +169,23 @@ select {
     }
 }
 
+.chat-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center; /* 标题居中 */
+    color: #333; /* 标题颜色 */
+    transition: color 0.3s ease, transform 0.3s ease; /* 添加颜色和变换的过渡效果 */
+    cursor: pointer; /* 鼠标悬停时显示手型光标 */
+}
+
+
+/* 鼠标悬停时的效果 */
+.chat-title:hover {
+    color: #007BFF; /* 悬停时改变颜色 */
+    transform: scale(1.1); /* 悬停时放大 */
+}
+
 #chat-container {
     height: 300px; /* 设置默认高度为300像素 */
     overflow-y: auto; /* 当内容超出高度时显示滚动条 */
@@ -213,6 +228,8 @@ div.user {
     text-align: right;
     background-color: #dcf8c6;
 }
+
+
 
 #markdown-content {
     margin: 10px;

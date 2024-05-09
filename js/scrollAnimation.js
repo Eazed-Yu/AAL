@@ -40,6 +40,7 @@ function updateMap() {
     animationMap.clear()
     const playGrounds = document.querySelectorAll('.playground');
     playGrounds.forEach( playGround => {
+
         const playGroundRect = playGround.getBoundingClientRect();
         const scrollStart = playGroundRect.top + window.scrollY;
         const scrollEnd = playGroundRect.bottom + window.scrollY - window.innerHeight * 2;
@@ -48,6 +49,7 @@ function updateMap() {
         for (const item of items) {
             animationMap.set(item, getDomAnimation(scrollStart, scrollEnd, item, container))
         }
+
     } )
 }
 
@@ -66,3 +68,7 @@ window.addEventListener('load', function () {
     updateStyles();
 })
 window.addEventListener('scroll', updateStyles);
+window.addEventListener('resize', function () {
+    updateMap();
+    updateStyles();
+})
