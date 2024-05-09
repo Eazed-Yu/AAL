@@ -12,7 +12,7 @@ function displayMessage(message, isUser) {
 }
 
 // 发送消息并接收AI响应的函数
-async function sendMessage() {
+function sendMessage() {
     let resp = ""
     const preTalk = ''
     const input = document.getElementById('input-message');
@@ -27,7 +27,7 @@ async function sendMessage() {
     const container = document.getElementById('chat-container');
     const messageDiv = document.createElement('div');
     const messageMarkdown = document.createElement('div');
-    messageDiv.classList.add('message');
+    messageDiv.classList.add('message', 'ai');
     messageMarkdown.classList.add('markdown')
 
     container.appendChild(messageDiv);
@@ -41,6 +41,7 @@ async function sendMessage() {
         const finishReason = eventData.result.metadata.finishReason; // 获取finishReason属性的值
     
         if (finishReason === "STOP") {
+            console.log(resp);
             evtSource.close(); // 关闭SSE连接
             console.log("SSE连接已关闭，因为finishReason为STOP");
         } else {

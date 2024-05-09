@@ -88,11 +88,60 @@ body {
     display: flex;
 }
 
+/* 为 problem 类添加样式 */
 .problem {
-    background: white;
     width: 40%;
-    height: 100%;
-    margin: 25px;
+    background-color: #f9f9f9; /* 浅色背景 */
+    border: 1px solid #ddd; /* 浅灰色边框 */
+    border-radius: 5px; /* 圆角 */
+    padding: 20px; /* 内边距 */
+    margin-bottom: 20px; /* 下方外边距 */
+    font-family: 'Arial', sans-serif; /* 字体 */
+    font-size: 16px; /* 字体大小 */
+    line-height: 1.6; /* 行高 */
+    color: #333; /* 文字颜色 */
+}
+
+/* 为 problem div 内的 markdown 内容添加样式 */
+.problem .markdown {
+    margin: 0; /* 移除默认外边距 */
+    padding: 0; /* 移除默认内边距 */
+}
+
+.problem .markdown h1,
+.problem .markdown h2,
+.problem .markdown h3,
+.problem .markdown h4,
+.problem .markdown h5,
+.problem .markdown h6 {
+    margin-top: 20px; /* 标题上方外边距 */
+    margin-bottom: 10px; /* 标题下方外边距 */
+    font-weight: bold; /* 标题加粗 */
+    color: #2c3e50; /* 标题颜色 */
+}
+
+.problem .markdown p {
+    margin-bottom: 15px; /* 段落下方外边距 */
+}
+
+.problem .markdown pre,
+.problem .markdown code {
+    background-color: #f3f3f3; /* 代码块浅色背景 */
+    border: 1px solid #e1e1e1; /* 代码块浅灰色边框 */
+    border-radius: 3px; /* 代码块圆角 */
+    padding: 10px; /* 代码块内边距 */
+    font-family: 'Courier New', monospace; /* 代码块等宽字体 */
+    font-size: 15px; /* 代码块字体大小 */
+}
+
+/* 行内代码样式 */
+.problem .markdown code {
+    padding: 2px 4px; /* 行内代码内边距 */
+}
+
+/* 块级代码样式 */
+.problem .markdown pre {
+    overflow-x: auto; /* 长代码行水平滚动 */
 }
 
 .editGround {
@@ -179,13 +228,6 @@ select {
     cursor: pointer; /* 鼠标悬停时显示手型光标 */
 }
 
-
-/* 鼠标悬停时的效果 */
-.chat-title:hover {
-    color: #007BFF; /* 悬停时改变颜色 */
-    transform: scale(1.1); /* 悬停时放大 */
-}
-
 #chat-container {
     height: 300px; /* 设置默认高度为300像素 */
     overflow-y: auto; /* 当内容超出高度时显示滚动条 */
@@ -218,19 +260,22 @@ button {
 /* 消息框样式，包括背景颜色和边框圆角 */
 div.message {
     margin-bottom: 10px;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: #f4f4f4;
+    padding: 10px; /* 增加内边距 */
+    border-radius: 10px; /* 增加圆角 */
+    background-color: #ffffff; /* 背景颜色为白色 */
+    border: 1px solid #ddd; /* 添加边框 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加轻微的阴影 */
 }
 
-/* 用户消息的样式，文本右对齐并改变背景颜色 */
-div.user {
-    text-align: right;
-    background-color: #dcf8c6;
+/* 用户消息样式，可以用不同的颜色区分 */
+div.message.user {
+    background-color: #e0f7fa; /* 用户消息的背景颜色 */
 }
 
-
-
+/* AI 消息样式 */
+div.message.ai {
+    background-color: #f4f4f4; /* AI 消息的背景颜色 */
+}
 #markdown-content {
     margin: 10px;
 }
