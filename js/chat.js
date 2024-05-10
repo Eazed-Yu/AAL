@@ -13,7 +13,7 @@ function displayMessage(message, isUser) {
 
 // 发送消息并接收AI响应的函数
 function sendMessage() {
-    let resp = ""
+    let resp = [];
     const preTalk = ''
     const input = document.getElementById('input-message');
     const problem = window.problemDescription; // 获取渲染后的题目内容
@@ -32,23 +32,30 @@ function sendMessage() {
 
     container.appendChild(messageDiv);
     messageDiv.appendChild(messageMarkdown);
+    
 
+
+
+
+/*
+后端有bug
     const evtSource = new EventSource(`http://localhost:8080/ai/generateStream?message=${encodeURIComponent(systemPrompt)}`);
 
     // TODO: 有bug
     evtSource.onmessage = (event) => {
-
         const eventData = JSON.parse(event.data); // 解析JSON字符串为JavaScript对象
         const finishReason = eventData.result.metadata.finishReason; // 获取finishReason属性的值
-    
         if (finishReason === "STOP") {
             console.log(resp);
             evtSource.close(); // 关闭SSE连接
             console.log("SSE连接已关闭，因为finishReason为STOP");
         } else {
-            const content = eventData.result.output.content; // 获取content属性的值
-            resp += content;
-            messageMarkdown.innerHTML = marked.parse(resp);
+            resp.push(event.data);
+            let reply = '';
+            resp.forEach( res => {
+                reply += JSON.parse(res).result.output.content;
+            })
+            messageMarkdown.innerHTML = marked.parse(reply);
             renderMathInElement(messageMarkdown, {
                 delimiters: [
                     {left: "$$", right: "$$", display: true},
@@ -58,6 +65,6 @@ function sendMessage() {
             });
         }
     };
-    
+*/
 }
 
