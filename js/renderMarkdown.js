@@ -8,9 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
         smartLists: true,
         smartypants: true,
         xhtml: false,
-        highlight: function (code, lang) {
-            return hljs.getLanguage(lang) ? hljs.highlight(lang, code).value : hljs.highlightAuto(code).value;
-        }
     });
 
     document.querySelectorAll('.markdown').forEach(elem => {
