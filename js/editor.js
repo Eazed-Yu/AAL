@@ -1,4 +1,4 @@
-var editor;
+let editor;
 
 window.addEventListener('load', function () {
     require.config({
@@ -14,7 +14,10 @@ window.addEventListener('load', function () {
                 '}'
             ].join('\n'),
             language: 'cpp',
-            theme: 'vs-dark'
+            theme: 'vs-dark',
+            minimap: {
+                enabled: false // 关闭小地图
+            }
         });
 
         document.getElementById('languageSelector').addEventListener('change', function (e) {

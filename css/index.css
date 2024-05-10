@@ -102,7 +102,7 @@ body {
 .picture-container, .text-container {
     width: 40%;
     height: auto;
-    transition: transform 0.1s ease; /* 平滑的动画效果 */
+    transition: transform 0.2s ease; /* 平滑的动画效果 */
 }
 
 .picture-container img {

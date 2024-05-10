@@ -8,6 +8,7 @@ body {
     width: 100%;
     flex-wrap: wrap;
     height: auto;
+    height: auto;
     background: linear-gradient(200deg,#a8edea, #fed6e3);
     display: inline;
 }
@@ -83,13 +84,15 @@ body {
 
 .playGround {
     width: 100%;
+    height: 150vh;
     flex-wrap: wrap;
-    height: 1000px;
+    height: auto;
     display: flex;
 }
 
 /* 为 problem 类添加样式 */
 .problem {
+    opacity: 0.8;
     width: 40%;
     background-color: #f9f9f9; /* 浅色背景 */
     border: 1px solid #ddd; /* 浅灰色边框 */
@@ -156,7 +159,7 @@ select {
 }
 
 #editor {
-    height: 400px;
+    height: auto;
     flex-grow: 1;
     border: 1px solid #ddd;
 }
@@ -177,13 +180,12 @@ select {
 }
 
 .chat-title {
+    margin: 0;
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 10px;
+    top: 0;
     text-align: center; /* 标题居中 */
     color: #333; /* 标题颜色 */
-    transition: color 0.3s ease, transform 0.3s ease; /* 添加颜色和变换的过渡效果 */
-    cursor: pointer; /* 鼠标悬停时显示手型光标 */
 }
 
 #chat-container {
@@ -256,4 +258,5 @@ div.message.ai {
 
 markdown {
     margin: 20px;
+    transition: transform 0.5s ease; /* 平滑的动画效果 */
 }
