@@ -9,23 +9,13 @@
     top: 0px;
 }
 
-/* 通用样式 */
-body, h3, select, textarea, button, a {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif; /* 设置通用字体 */
-}
+
 
 body {
     line-height: 1.6; /* 设置行高 */
     background-color: #f0f2f5; /* 设置背景颜色 */
+    margin: 0;
 }
-
-h3 {
-    margin-bottom: 10px; /* 设置标题下方的外边距 */
-}
-
-
 
 .playGround {
     display: flex; /* 使用弹性布局 */
@@ -50,68 +40,15 @@ h3 {
     padding: 10px; /* 设置内边距 */
 }
 
-/* AI助手样式 */
-.aiHelper {
-    background-color: #ffffff; /* 设置AI助手背景颜色 */
-    padding: 20px; /* 设置内边距 */
-    border: 1px solid #ddd; /* 设置边框 */
-    border-radius: 5px; /* 设置圆角 */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 添加阴影效果 */
-}
-
-.chat-title {
-    font-size: 18px; /* 设置标题字体大小 */
-    color: #333; /* 设置标题颜色 */
-    margin-bottom: 10px; /* 设置标题下方的外边距 */
-}
-
-#chat-container {
-    border: 1px solid #ddd; /* 设置边框 */
-    height: 150px; /* 设置高度 */
-    overflow-y: scroll; /* 超出内容垂直滚动 */
-    margin-bottom: 10px; /* 设置下方的外边距 */
-    padding: 10px; /* 设置内边距 */
-    background-color: #f9f9f9; /* 设置背景颜色 */
-}
-
-.input-container {
-    position: relative; /* 相对定位 */
-    width: 100%; /* 宽度100% */
-}
-
-#input-message {
-    width: 100%; /* 设置宽度为100%减去按钮宽度 */
-    padding: 10px; /* 设置内边距 */
-    border: 1px solid #ddd; /* 设置边框 */
-    border-radius: 5px; /* 设置圆角 */
-    box-sizing: border-box; /* 包括内边距和边框 */
-}
-
-.input-container button {
-    height: 90%;
-    position: absolute; /* 绝对定位 */
-    right: 0px; /* 距离右边10px */
-    top: 46%; /* 垂直居中 */
-    transform: translateY(-50%); /* 垂直居中 */
-    padding: 10px 20px; /* 设置内边距 */
-    background-color: white; /* 设置按钮背景颜色 */
-    color: black; /* 设置按钮文字颜色 */
-    border: 1px solid #ddd; /* 设置边框 */
-    cursor: pointer; /* 设置鼠标指针样式 */
-    border-radius: 5px; /* 设置圆角 */
-    transition: background-color 0.3s; /* 添加背景颜色过渡效果 */
-}
-
-.input-container button:hover {
-    background-color: #0056b3; /* 设置按钮悬停时的背景颜色 */
-}
-
 .uiPanel {
-    margin-bottom: 10px; /* 设置下方的外边距 */
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
 }
 
 .uiRow {
     margin-bottom: 10px; /* 设置下方的外边距 */
+    width: auto;
 }
 
 select {
@@ -127,20 +64,6 @@ select {
     border: 1px solid #ccc; /* 优化边框颜色 */
     border-radius: 10px; /* 增加圆角 */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 使用更柔和的阴影 */
-    font-family: 'Arial', sans-serif; /* 设置字体 */
     font-size: 16px; /* 调整字体大小 */
     color: #333; /* 设置字体颜色 */
-    transition: box-shadow 0.3s ease; /* 添加过渡效果 */
 }
-
-#editor {
-    border: 1px solid #ccc; /* 优化边框颜色 */
-    height: 400px; /* 设置高度 */
-    background-color: #fafafa; /* 设置更浅的背景颜色 */
-    border-radius: 10px; /* 增加圆角 */
-    padding: 10px; /* 增加内边距 */
-    font-family: 'Courier New', Courier, monospace; /* 设置等宽字体 */
-    font-size: 14px; /* 调整字体大小 */
-    color: #2c3e50; /* 设置字体颜色 */
-}
-
