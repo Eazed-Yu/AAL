@@ -54,16 +54,7 @@ a {
     color: white;
 }
 
-.header_Cloud {
-    position: absolute;
-    z-index: 1;
-    transition: all 0.2s ease-out 0s;
-    background-color: rgb(105, 224, 255);
-    height: 5px;
-    left: 410px;
-    width: 40px;
-    top: 0px;
-}
+
 
 .blank {
     width: 100%;

@@ -1,3 +1,14 @@
+.header_Cloud {
+    position: absolute;
+    z-index: 1;
+    transition: all 0.2s ease-out 0s;
+    background-color: rgb(105, 224, 255);
+    height: 5px;
+    left: 410px;
+    width: 40px;
+    top: 0px;
+}
+
 /* 通用样式 */
 body, h3, select, textarea, button, a {
     margin: 0;
@@ -94,14 +105,6 @@ h3 {
 .input-container button:hover {
     background-color: #0056b3; /* 设置按钮悬停时的背景颜色 */
 }
-/* 编辑器样式 */
-.editor {
-    background-color: #ffffff; /* 设置编辑器背景颜色 */
-    padding: 20px; /* 设置内边距 */
-    border: 1px solid #ddd; /* 设置边框 */
-    border-radius: 5px; /* 设置圆角 */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 添加阴影效果 */
-}
 
 .uiPanel {
     margin-bottom: 10px; /* 设置下方的外边距 */
@@ -117,9 +120,27 @@ select {
     border-radius: 5px; /* 设置圆角 */
 }
 
-#editor {
-    border: 1px solid #ddd; /* 设置边框 */
-    height: 400px; /* 设置高度 */
-    background-color: #f9f9f9; /* 设置背景颜色 */
-    border-radius: 5px; /* 设置圆角 */
+/* 编辑器样式 */
+.editor {
+    background: linear-gradient(135deg, #ffffff, #f0f0f0); /* 设置渐变背景颜色 */
+    padding: 30px; /* 增加内边距 */
+    border: 1px solid #ccc; /* 优化边框颜色 */
+    border-radius: 10px; /* 增加圆角 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 使用更柔和的阴影 */
+    font-family: 'Arial', sans-serif; /* 设置字体 */
+    font-size: 16px; /* 调整字体大小 */
+    color: #333; /* 设置字体颜色 */
+    transition: box-shadow 0.3s ease; /* 添加过渡效果 */
 }
+
+#editor {
+    border: 1px solid #ccc; /* 优化边框颜色 */
+    height: 400px; /* 设置高度 */
+    background-color: #fafafa; /* 设置更浅的背景颜色 */
+    border-radius: 10px; /* 增加圆角 */
+    padding: 10px; /* 增加内边距 */
+    font-family: 'Courier New', Courier, monospace; /* 设置等宽字体 */
+    font-size: 14px; /* 调整字体大小 */
+    color: #2c3e50; /* 设置字体颜色 */
+}
+

@@ -1,10 +1,21 @@
 
+.header_Cloud {
+    position: absolute;
+    z-index: 1;
+    transition: all 0.2s ease-out 0s;
+    background-color: rgb(105, 224, 255);
+    height: 5px;
+    left: 310px;
+    width: 40px;
+    top: 0px;
+}
+
 body {
     margin: 0;
     width: 100%;
     flex-wrap: wrap;
     height: auto;
-    background: linear-gradient(200deg,#a8edea, #fed6e3);
+    background: linear-gradient(0deg, #a8edea, #fed6e3 25%, #6fdf9a 50%, #fecfef 75%, #a8edea);
     display: inline;
 }
 
