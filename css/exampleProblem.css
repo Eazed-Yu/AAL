@@ -9,8 +9,6 @@
     top: 0px;
 }
 
-
-
 body {
     line-height: 1.6; /* 设置行高 */
     background-color: #f0f2f5; /* 设置背景颜色 */
@@ -19,16 +17,15 @@ body {
 
 .playGround {
     display: flex; /* 使用弹性布局 */
-    padding: 20px; /* 设置四周内边距 */
 }
 
 .problem, .editGround {
-    flex: 1; /* 设置弹性布局项的增长因子 */
     margin: 10px; /* 设置外边距 */
 }
 
 /* 问题区域样式 */
 .problem {
+    width: 50%;
     background-color: #ffffff; /* 设置问题区域背景颜色 */
     padding: 20px; /* 设置内边距 */
     border: 1px solid #ddd; /* 设置边框 */
@@ -36,9 +33,6 @@ body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 添加阴影效果 */
 }
 
-.markdown {
-    padding: 10px; /* 设置内边距 */
-}
 
 .uiPanel {
     display: flex;
@@ -57,13 +51,50 @@ select {
     border-radius: 5px; /* 设置圆角 */
 }
 
+
+.editGround {
+    width: 50%;
+    margin-right: 10px;
+
+}
+
+
 /* 编辑器样式 */
 .editor {
+    display: block;
+    height: 50%;
     background: linear-gradient(135deg, #ffffff, #f0f0f0); /* 设置渐变背景颜色 */
-    padding: 30px; /* 增加内边距 */
+    padding: 10px; /* 增加内边距 */
     border: 1px solid #ccc; /* 优化边框颜色 */
     border-radius: 10px; /* 增加圆角 */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 使用更柔和的阴影 */
     font-size: 16px; /* 调整字体大小 */
     color: #333; /* 设置字体颜色 */
+    overflow: hidden;
+}
+
+
+.fullscreen {
+    height:auto;
+
+}
+
+.hiddenscreen {
+    display: flex;
+}
+
+
+/* 全屏按钮样式 */
+.fullscreen-btn {
+    margin-right: 15%;
+    margin-bottom: 10px; /* 设置下方的外边距 */
+    width: auto;
+    left: 0;
+    background-color: #ffffff;
+    color: rgb(123, 116, 116);
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px; /* 设置内边距 */
+    border: 1px solid #ddd; /* 设置边框 */
+    border-radius: 5px; /* 设置圆角 */
 }

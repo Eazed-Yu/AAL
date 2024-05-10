@@ -1,6 +1,8 @@
 
 /* AI助手样式 */
 .aiHelper {
+    display: block;
+    height: 50%;
     background-color: #ffffff; /* 设置AI助手背景颜色 */
     padding: 10px; /* 设置内边距 */
     border: 1px solid #ddd; /* 设置边框 */
@@ -16,7 +18,7 @@
 
 #chat-container {
     border: 1px solid #ddd; /* 设置边框 */
-    height: 200px; /* 设置高度 */
+    height: 40%; /* 设置高度 */
     overflow-y: scroll; /* 超出内容垂直滚动 */
     margin-bottom: 10px; /* 设置下方的外边距 */
     padding: 10px; /* 设置内边距 */
@@ -39,7 +41,7 @@
 .input-container button {
     height: 90%;
     position: absolute; /* 绝对定位 */
-    right: 0px;
+    right: 0px; /* 距离右边10px */
     top: 46%; /* 垂直居中 */
     transform: translateY(-50%); /* 垂直居中 */
     padding: 10px 20px; /* 设置内边距 */
@@ -52,5 +54,5 @@
 }
 
 .input-container button:hover {
-    background-color: #0056b3; /* 设置按钮悬停时的背景颜色 */
+    background-color: #9da4ac; /* 设置按钮悬停时的背景颜色 */
 }
