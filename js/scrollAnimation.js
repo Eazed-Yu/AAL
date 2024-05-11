@@ -17,10 +17,10 @@ function createAnimation(scrollStart, scrollEnd, valueStart, valueEnd) {
 
 function getDomAnimation(scrollStart, scrollEnd, dom, container) {
 
-    const scaleAnimation = createAnimation(scrollStart, scrollEnd, 0.1, 1);
-    const opacityAnimtion = createAnimation(scrollStart, scrollEnd, 0, 1);
+    const scaleAnimation = createAnimation(scrollStart, scrollEnd, 0.3, 1);
+    const opacityAnimtion = createAnimation(scrollStart, scrollEnd, 0.3, 1);
     
-    const xAnimation = createAnimation(scrollStart, scrollEnd, container.offsetLeft + container.clientWidth / 2 - dom.offsetLeft - dom.clientWidth / 2, 0);
+    const xAnimation = createAnimation(scrollStart, scrollEnd, Number(dom.dataset.shift), 0);
     const yAnimation = createAnimation(scrollStart, scrollEnd, container.offsetTop + container.clientHeight / 2 - dom.offsetTop - dom.clientHeight / 2, 0);
 
     const opacity = function (scroll) {
@@ -38,11 +38,12 @@ function getDomAnimation(scrollStart, scrollEnd, dom, container) {
 
 function updateMap() {
     animationMap.clear()
+    
     const playGrounds = document.querySelectorAll('.playground');
     playGrounds.forEach( playGround => {
 
         const playGroundRect = playGround.getBoundingClientRect();
-        const scrollStart = playGroundRect.top + window.scrollY;
+        const scrollStart = playGroundRect.top + window.scrollY - 500;
         const scrollEnd = playGroundRect.bottom + window.scrollY - window.innerHeight * 2;
         const container = playGround.querySelector(".animation-container");
         const items = container.children
@@ -67,7 +68,10 @@ window.addEventListener('load', function () {
     updateMap();
     updateStyles();
 })
-window.addEventListener('scroll', updateStyles);
+window.addEventListener('scroll', () => {
+    updateMap();
+    updateStyles();
+});
 window.addEventListener('resize', function () {
     updateMap();
     updateStyles();

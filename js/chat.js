@@ -1,8 +1,9 @@
 // 添加你的 API 密钥
+// 随便用吧
 const apiKey = '4cd856e76fe8bb2b6141118e52c1a06b.mD4DfC42Rag0haVS';
 // 初始化消息历史
 let chatGPTmessages = [
-    { role: 'system', content: '你是一个编程助手，帮助用户编程和算法入门。' },
+    { role: 'system', content: '你是一个编程助手，帮助用户编程和算法入门。只允许回答代码相关问题。' },
     { role: 'system', content: '这是题目描述和用户代码：' },
 ];
 

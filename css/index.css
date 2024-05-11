@@ -35,6 +35,7 @@ body {
 }
 
 .animation-container {
+    overflow: hidden;
     position: sticky;
     top: 0;
     height: 100vh; /* 确保高度为视窗高度 */
@@ -44,10 +45,12 @@ body {
     justify-content: space-around; /* 子元素均匀分布 */
 }
 
+
+
 .picture-container, .text-container {
-    width: 40%;
+    width: 30%;
     height: auto;
-    transition: transform 0.2s ease; /* 平滑的动画效果 */
+    overflow: hidden;
 }
 
 .picture-container img {
