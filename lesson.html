@@ -23,16 +23,301 @@
     <div class="problemSet">
         <div class="problem">
             <!-- 这里添加题目 -->
-            <a id="exampleProblem" href="exampleProblem.html">exampleProblem</a>
-
-
-
-            
-        </div>
-    </div>
+            <div class="border table">
+                <div class="header-wrap">
+                    <div class="header-1">
+                        <div class="status">
+                            <span class="lfe-caption">
+                                状态
+                            </span>
+                        </div>
+                        <div class="pid"><span class="lfe-caption">
+                                题号
+                                <svg data-icon="sort" role="img" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 320 512" class="svg-inline--fa fa-sort"
+                                    style="cursor: pointer; color: rgb(191, 191, 191);">
+                                    <path fill="currentColor"
+                                        d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"
+                                        class=""></path>
+                                </svg></span></div>
+                        <div class="title" style="width: 30%;">
+                            <span class="lfe-caption">
+                                题目名称
+                                <svg data-icon="sort" role="img" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 320 512" class="svg-inline--fa fa-sort"
+                                    style="cursor: pointer; color: rgb(191, 191, 191);">
+                                    <path fill="currentColor"
+                                        d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"
+                                        class=""></path>
+                                </svg></span>
+                        </div>
+                        <div class="tag">
+                            <span class="lfe-caption"><a href="javascript:void 0" class="color-default">显示算法</a>
+                                标签
+                            </span>
+                        </div>
+                        <div class="difficulty"><span class="lfe-caption">
+                                难度
+                                <svg data-icon="sort" role="img" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 320 512" class="svg-inline--fa fa-sort"
+                                    style="cursor: pointer; color: rgb(191, 191, 191);">
+                                    <path fill="currentColor"
+                                        d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"
+                                        class=""></path>
+                                </svg></span></div>
+                        <div class="progress"><span class="lfe-caption">
+                                通过率
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-wrap">
+                </div>
+            </div>
 </body>
 <script src="js/header.js"></script>
 <script src="js/jquery.js"></script>
 <script src="js/move.js"></script>
 
+<script>
+    window.onload = function () {
+
+        // 获取表格元素
+        let rowWrap = document.querySelector('.row-wrap')
+        // 表格行
+        let rows = ""
+        // 题目数据
+        let data = [
+            {
+                sn: 'P1000',
+                title: '超级玛丽流',
+                status: `<svg   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon svg-inline--fa fa-minus"  style="opacity: 0.7;">
+                            <path  fill="currentColor" d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z" class=""></path></svg>`,
+                tags: ['NOIP 普及组', '2022'],
+                difficulty: '1',
+                progress: 80,
+                url:'exampleProblem.html'
+            },
+            {
+                title: 'A+B Problem',
+                status: `<svg   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon svg-inline--fa fa-minus"  style="opacity: 0.7;">
+                            <path  fill="currentColor" d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z" class=""></path></svg>`,
+                tags: [],
+                difficulty: '1',
+                progress: 50,
+                url:'我的跳转的地址'
+            },
+            {
+                title: '[NOIP2002 普及组] 过河卒',
+                status: `<svg   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon svg-inline--fa fa-minus"  style="opacity: 0.7;">
+                            <path  fill="currentColor" d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z" class=""></path></svg>`,
+                tags: ['NOIP 普及组', '2022'],
+                difficulty: '2',
+                progress: 10,
+                url:'我的跳转的地址'
+            },
+            {
+                title: '[NOIP2000 提高组] 方格取数',
+                status: `<svg   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon svg-inline--fa fa-minus"  style="opacity: 0.7;">
+                            <path  fill="currentColor" d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z" class=""></path></svg>`,
+                tags: ['NOIP 普及组', '2022'],
+                difficulty: '2',
+                progress: 10,
+                url:'我的跳转的地址'
+            },
+            {
+                title: 'NOIP2007 提高组] 矩阵取数游戏',
+                status: `<svg   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon svg-inline--fa fa-minus"  style="opacity: 0.7;">
+                            <path  fill="currentColor" d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z" class=""></path></svg>`,
+                tags: ['NOIP 普及组', '2022'],
+                difficulty: '2',
+                progress: 10,
+                url:'我的跳转的地址'
+            },
+            {
+                title: '[NOIP2008 提高组] 传纸条',
+                status: `<svg   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon svg-inline--fa fa-minus"  style="opacity: 0.7;">
+                            <path  fill="currentColor" d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z" class=""></path></svg>`,
+                tags: ['NOIP 普及组', '2022'],
+                difficulty: '3',
+                progress: 10,
+                url:'exampleProblem.html'
+            },
+            {
+                title: '独木桥',
+                status: `<svg   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon svg-inline--fa fa-minus"  style="opacity: 0.7;">
+                            <path  fill="currentColor" d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z" class=""></path></svg>`,
+                tags: [],
+                difficulty: '2',
+                progress: 10,
+                url:'我的跳转的地址'
+            },
+            {
+                title: '[NOIP1998 普及组] 三连击',
+                status: `<svg   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon svg-inline--fa fa-minus"  style="opacity: 0.7;">
+                            <path  fill="currentColor" d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z" class=""></path></svg>`,
+                tags: ['NOIP 普及组', '2022'],
+                difficulty: '4',
+                progress: 10,
+                url:'我的跳转的地址'
+            },
+            {
+                title: '[NOIP1998 普及组] 阶乘之和',
+                status: `<svg   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon svg-inline--fa fa-minus"  style="opacity: 0.7;">
+                            <path  fill="currentColor" d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z" class=""></path></svg>`,
+                tags: ['NOIP 普及组', '2022'],
+                difficulty: '3',
+                progress: 10,
+                url:'我的跳转的地址'
+            },
+            {
+                title: '[NOIP1998 普及组] 幂次方',
+                status: `<svg   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon svg-inline--fa fa-minus"  style="opacity: 0.7;">
+                            <path  fill="currentColor" d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z" class=""></path></svg>`,
+                tags: ['NOIP 普及组', '2022'],
+                difficulty: '2',
+                progress: 10,
+                url:'我的跳转的地址'
+            },
+            
+
+        ]
+
+        //  难度等级转换文字
+        let levelLabel = {
+            '1': '入门',
+            '2': '普及-',
+            '3': '普及+/提高',
+            '4': '提高+/省选-',
+        }
+
+        // 难度等级颜色转换
+        let levelLabelColor = {
+            '1': 'rgba(254,76,97)',
+            '2': 'rgb(243, 156, 17)',
+            '3': 'rgb(82, 196, 26)',
+            '4': 'rgb(52, 152, 219)',
+        }
+
+
+        for (let index = 0; index < data.length; index++) {
+            let rowInfo =
+                `<div class="row">
+                 <span class="status">
+                    ${data[index].status}
+                        </span> 
+                            <span >${data[0].sn + index}</span> 
+                            <div  class="title">
+                     <a  target="_blank"  class="title   >
+                  ${data[index].title}P
+                </a>
+                </div>
+                <div class="title">
+                  <a href="${data[index].url}" target="_blank" class="title">  ${data[index].title} </a>
+                    </div>
+                    <div class="tags " >
+                        ${data[index].tags.length ? `
+                            <span class="lfe-caption" style="color: rgb(255, 255, 255); background: rgb(19, 194, 194);padding:0px 5px">
+                                    ${data[index].tags[0] || ''}</span>
+                                    <span
+                                        style="color: rgb(255, 255, 255); background: rgb(52, 152, 219); padding: 0px 5px;">
+                                        ${data[index].tags[1] || ''}
+                                        </span>
+                            `: ''}
+                        </div>
+                 <div>
+                    <a   href="javascript:void 0" class="color-default" >
+                        <span style="background: ${levelLabelColor[data[index].difficulty]}; color: #fff; padding:0px 5px">
+                    ${levelLabel[data[index].difficulty]}
+                  </span>
+                  </a>
+                  </div> 
+                  <div  class="progress">
+                    <div  class="progress-frame" >
+                    <div  style="width: ${data[index].progress + '%'}; height: 100%; background-color: rgb(52, 152, 219);" class="progreeLine">
+                        </div>
+                    </div>
+                    </div>
+                    </div>`
+            rows += rowInfo
+        }
+        rowWrap.innerHTML = rows
+    }
+
+</script>
+
 </html>
+
+<style>
+    /*
+    表格样式
+*/
+
+    .table {
+        display: table;
+        border-collapse: collapse;
+        border-spacing: 0;
+        min-width: 100%;
+    }
+
+    .table .header-wrap {
+        display: table-header-group;
+        border-bottom: thin solid #c5c4c491;
+    }
+
+    .table .row-wrap {
+        display: table-row-group;
+    }
+
+    .table .header-1,
+    .table .row {
+        display: table-row;
+    }
+
+    .table .header-1>*,
+    .table .row>* {
+        display: table-cell;
+    }
+
+    .table .header-1>* {
+        padding-bottom: .5em;
+        vertical-align: middle;
+    }
+
+    .table .header-1>*:not(:last-child) {
+        padding-right: 6px;
+    }
+
+    .table .row>* {
+        padding: .5em 0;
+        vertical-align: middle;
+        border-bottom: 1px solid #e8e8e8;
+    }
+
+    .table .row>*:not(:last-child) {
+        padding-right: 6px;
+    }
+
+    .table .header-1 svg {
+        width: 10px;
+    }
+
+    /*
+ 通过率样式
+*/
+    .progress {
+        width: 100px;
+        height: 30px;
+    }
+
+    .progress-frame {
+        width: 100px;
+        height: 10px;
+        background-color: #e8e8e8;
+    }
+
+    .row .status svg {
+        height: 30px;
+    }
+
+</style>
