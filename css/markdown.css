@@ -1,7 +1,7 @@
 /* markdown 内容添加样式 */
 .markdown {
-    margin: 0; /* 移除默认外边距 */
-    padding: 0; /* 移除默认内边距 */
+    margin: 5px; /* 移除默认外边距 */
+    padding: 5px; /* 移除默认内边距 */
 }
 
 .markdown h1,

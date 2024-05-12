@@ -56,3 +56,21 @@
 .input-container button:hover {
     background-color: #9da4ac; /* 设置按钮悬停时的背景颜色 */
 }
+
+/* 用户消息样式，可以用不同的颜色区分 */
+div.message.user {
+    padding: 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #e0f7fa; /* 用户消息的背景颜色 */
+    border-radius: 10px; /* 圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 轻微的阴影效果 */
+}
+
+/* AI 消息样式 */
+div.message.ai {
+    background-color: #ffffff; /* AI 消息的背景颜色 */
+    padding: 2px;
+    border-radius: 10px; /* 圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 轻微的阴影效果 */
+}

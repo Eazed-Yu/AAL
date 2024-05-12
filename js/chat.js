@@ -23,6 +23,7 @@ function displayMessage(message, isUser) {
 
 // 发送消息并接收AI响应的函数
 async function sendMessage() {
+    const chatcontainer = document.querySelector('#chat-container');
     const input = document.getElementById('input-message');
 
     const message = input.value
@@ -95,6 +96,8 @@ async function sendMessage() {
                     ],
                     throwOnError: false
                 });
+                // 滚动到最下方
+                chatcontainer.scrollTop = chatcontainer.scrollHeight;
             }
         }
         console.log(reply)
