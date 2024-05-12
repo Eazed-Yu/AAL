@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>课程</title>
     <link rel="stylesheet" href="css/exampleProblem.css">
+    <link rel="stylesheet" href="css/chat.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/markdown.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
@@ -61,9 +62,9 @@
         </div>
         <div class="editGround">
             <div class="aiHelper">
+                <button class="fullscreen-btn" onclick="toggleFullscreen('chat')">全屏</button>
                 <h3 class="chat-title">AI智能助手</h3>
-                <div id="chat-container">
-                </div>
+                <div id="chat-container"></div>
                 <div class="input-container">
                     <textarea id="input-message" placeholder="输入消息..." rows="4" style="resize: none;"></textarea>
                     <button onclick="sendMessage()">发送</button>
@@ -71,6 +72,7 @@
             </div>
             <div class="editor">
                 <div class="uiPanel">
+                    <button class="fullscreen-btn" onclick="toggleFullscreen('editor')">全屏</button>
                     <div class="uiRow">
                         <label for="themeSelector">选择主题:</label>
                         <select id="themeSelector">
@@ -98,7 +100,7 @@
                 <div id="editor" style="height: 400px; width: 100%;"></div>
             </div>
         </div>
-    </div>
+        
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
@@ -107,7 +109,7 @@
     <script src="js/chat.js"></script>
     <script src="js/move.js"></script>
     <script src="js/header.js"></script>
-
+    <script src="js/toggleFullscreen.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.30.1/min/vs/loader.js"></script>
 </body>
 

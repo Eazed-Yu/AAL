@@ -1,8 +1,9 @@
-// 添加你的 OpenAI API 密钥
-const apiKey = 'OpenAI API';
+// 添加你的 API 密钥
+// 随便用吧
+const apiKey = '4cd856e76fe8bb2b6141118e52c1a06b.mD4DfC42Rag0haVS';
 // 初始化消息历史
 let chatGPTmessages = [
-    { role: 'system', content: '你是一个编程助手，帮助用户编程和算法入门。' },
+    { role: 'system', content: '你是一个编程助手，帮助用户编程和算法入门。只允许回答代码相关问题。' },
     { role: 'system', content: '这是题目描述和用户代码：' },
 ];
 
@@ -51,28 +52,28 @@ async function sendMessage() {
 
     // 创建请求体
     const data = {
-        model: 'gpt-3.5-turbo',
+        model: 'glm-4',
         messages: chatGPTmessages,
         stream: true // 启用流式传输
     };
     try {
         // 发送 POST 请求到 OpenAI API
-        const response = await fetch('https://api.openai.com/v1/chat/completions', {
+        const response = await fetch('https://open.bigmodel.cn/api/paas/v4/chat/completions', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${apiKey}`,
-                'Accept': 'text/event-stream'
             },
             body: JSON.stringify(data)
         });
 
-        // 检查响应是否成功
-        if (!response.ok) {
-            const error = await response.json();
-            alert('出错了：'+ error);
-            return;
-        }
+    // 检查响应是否成功
+    if (!response.ok) {
+        response.json().then(data => {
+            alert('出错了：' + data.error.message);
+        });
+        return;
+    }
 
         // 处理流式响应
         const reader = response.body.getReader();
@@ -101,37 +102,6 @@ async function sendMessage() {
     } catch (error) {
         console.log("出错了：" + error)
     }
-
-
-    /*
-    后端有bug
-        const evtSource = new EventSource(`http://localhost:8080/ai/generateStream?message=${encodeURIComponent(systemPrompt)}`);
-    
-        // TODO: 有bug
-        evtSource.onmessage = (event) => {
-            const eventData = JSON.parse(event.data); // 解析JSON字符串为JavaScript对象
-            const finishReason = eventData.result.metadata.finishReason; // 获取finishReason属性的值
-            if (finishReason === "STOP") {
-                console.log(resp);
-                evtSource.close(); // 关闭SSE连接
-                console.log("SSE连接已关闭，因为finishReason为STOP");
-            } else {
-                resp.push(event.data);
-                let reply = '';
-                resp.forEach( res => {
-                    reply += JSON.parse(res).result.output.content;
-                })
-                messageMarkdown.innerHTML = marked.parse(reply);
-                renderMathInElement(messageMarkdown, {
-                    delimiters: [
-                        {left: "$$", right: "$$", display: true},
-                        {left: "$", right: "$", display: false}
-                    ],
-                    throwOnError: false
-                });
-            }
-        };
-    */
 }
 function parseStreamedResponse(buffer) {
     try {
