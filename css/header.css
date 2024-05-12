@@ -2,6 +2,15 @@ a {
     text-decoration: none;
 }
 
+.nav-image {
+    position: relative;
+    height: 50px; 
+    width: auto; 
+    margin-left: 20px; 
+    
+    vertical-align: middle; /* 垂直居中对齐 */
+    
+}
 /* 导航栏 */
 .header {
     opacity:0.9;
@@ -26,8 +35,8 @@ a {
 }
 
 .header_navitem a {
-    position: relative;
-    left: 240px;
+    position: flex;
+    left: 20px;
     top: 0px;
     float: left;
     width: 40px;
