@@ -64,11 +64,15 @@ $m=3,n=12,$
     </div>
     <div class="editGround">
         <div class="aiHelper">
-            <button class="fullscreen-btn" onclick="toggleFullscreen('chat')">全屏</button>
-            <h3 class="chat-title">AI智能助手</h3>
+            <div class="ai-header">
+                <button class="fullscreen-btn" onclick="toggleFullscreen('chat')">全屏</button>
+                <h3 class="chat-title">AI智能助手</h3>
+            </div>
+
             <div id="chat-container"></div>
+
             <div class="input-container">
-                <textarea id="input-message" placeholder="输入消息..." rows="4" style="resize: none;"></textarea>
+                <textarea id="input-message" placeholder="输入消息..." rows="3" style="resize: none;"></textarea>
                 <button onclick="sendMessage()">发送</button>
             </div>
         </div>
@@ -99,7 +103,7 @@ $m=3,n=12,$
                     </select>
                 </div>
             </div>
-            <div id="editor" style="height: 400px; width: 100%;"></div>
+            <div id="editor"></div>
         </div>
     </div>
 </div>
