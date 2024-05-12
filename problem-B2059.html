@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>课程</title>
-    <link rel="stylesheet" href="css/exampleProblem.css">
+    <link rel="stylesheet" href="css/problem.css">
     <link rel="stylesheet" href="css/chat.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/markdown.css">
@@ -64,11 +64,15 @@ $m=3,n=12,$
     </div>
     <div class="editGround">
         <div class="aiHelper">
-            <button class="fullscreen-btn" onclick="toggleFullscreen('chat')">全屏</button>
-            <h3 class="chat-title">AI智能助手</h3>
+            <div class="ai-header">
+                <button class="fullscreen-btn" onclick="toggleFullscreen('chat')">全屏</button>
+                <h3 class="chat-title">AI智能助手</h3>
+            </div>
+
             <div id="chat-container"></div>
+
             <div class="input-container">
-                <textarea id="input-message" placeholder="输入消息..." rows="4" style="resize: none;"></textarea>
+                <textarea id="input-message" placeholder="输入消息..." rows="3" style="resize: none;"></textarea>
                 <button onclick="sendMessage()">发送</button>
             </div>
         </div>
@@ -76,7 +80,7 @@ $m=3,n=12,$
             <div class="uiPanel">
                 <button class="fullscreen-btn" onclick="toggleFullscreen('editor')">全屏</button>
                 <div class="uiRow">
-                    <label for="themeSelector">选择主题:</label>
+                    <label for="themeSelector">主题:</label>
                     <select id="themeSelector">
                         <option value="vs-dark">Dark (vs-dark)</option>
                         <option value="vs">Light (vs)</option>
@@ -93,13 +97,13 @@ $m=3,n=12,$
                     </select>
                 </div>
                 <div class="uiRow">
-                    <label for="languageSelector">编程语言:</label>
+                    <label for="languageSelector">语言:</label>
                     <select id="languageSelector">
                         <option value="c_cpp">C/C++</option>
                     </select>
                 </div>
             </div>
-            <div id="editor" style="height: 400px; width: 100%;"></div>
+            <div id="monaco-editor" style="width: 100%;height: 80%"></div>
         </div>
     </div>
 </div>

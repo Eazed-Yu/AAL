@@ -1,5 +1,5 @@
 ```
-Ai-ACM-Learner(AAL)是一个基于生成式ai的ACM竞赛入门教学网站
+Ai-ACM-Learning(AAL)是一个基于生成式ai的ACM竞赛入门教学网站
 ```
 ## 网站包含三个主要部分:
 
