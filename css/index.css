@@ -18,6 +18,23 @@ body {
     background: linear-gradient(0deg, #a8edea, #fed6e3 25%, #6fdf9a 50%, #fecfef 75%, #a8edea);
     display: inline;
 }
+.head {
+    text-align: center;
+    color: black;
+    background-color: white;
+    height: 900px;
+    font-size: 200px;
+    line-height: 900px;
+}
+
+.footer {
+    text-align: center;
+    color: black;
+    background-color: white;
+    height: 900px;
+    font-size: 200px;
+    line-height: 900px;
+}
 
 
 .showbox {
