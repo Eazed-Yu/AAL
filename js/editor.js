@@ -6,7 +6,7 @@ window.addEventListener('load', function () {
         paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.30.1/min/vs' }
     });
     require(['vs/editor/editor.main'], function () {
-        editor = monaco.editor.create(document.getElementById('editor'), {
+        editor = monaco.editor.create(document.getElementById('monaco-editor'), {
             automaticLayout: true,
             value: [
                 '#include <iostream>',
@@ -34,10 +34,4 @@ window.addEventListener('load', function () {
             editor.updateOptions({ fontSize: e.target.value });
         });
     });
-    // 获取编辑器元素
-    const editorElement = document.getElementById('editor');
-
-    // 设置编辑器元素的样式为自动宽高
-    editorElement.style.width = '100%';
-    editorElement.style.height = '90%';
 });

@@ -10,22 +10,49 @@
 }
 
 body {
-    line-height: 1.6; /* 设置行高 */
     background-color: #f0f2f5; /* 设置背景颜色 */
-    margin: 0;
+    display: flex;
+    flex-direction: column; /* 默认是上下排列 */
+    min-height: 100vh; /* 让 body 至少充满整个视窗高度 */
+    margin: 0; /* 去掉默认的外边距 */
 }
 
+
 .playGround {
-    display: flex; /* 使用弹性布局 */
+    display: flex; /* 使用Flexbox布局 */
+    flex-direction: row; /* 默认垂直排列 */
+    flex-grow: 1; /* 占据剩余空间 */
+    box-sizing: border-box;
 }
 
 .problem, .editGround {
-    margin: 10px; /* 设置外边距 */
+    flex: 1;
+    min-width: 50%;
+    box-sizing: border-box;
+}
+
+
+@media (max-width: 768px) {
+    .playGround {
+        flex-direction: column; /* 当宽度小于 768px 时，变为上下排列 */
+    }
+    .fullscreen-btn {
+        display: none;
+    }
+    .editGround {
+        min-height: 150vh;
+    }
+    .aiHelper {
+        min-height: 75vh;
+    }
+    #monaco-editor {
+        min-height: 50vh;
+    }
 }
 
 /* 问题区域样式 */
 .problem {
-    width: 50%;
+    min-width: 50%;
     background-color: #ffffff; /* 设置问题区域背景颜色 */
     padding: 20px; /* 设置内边距 */
     border: 1px solid #ddd; /* 设置边框 */
@@ -33,12 +60,53 @@ body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 添加阴影效果 */
 }
 
+.editGround {
+    flex: 1; /* 占据剩余空间 */
+    display: flex; /* 使用Flexbox布局 */
+    flex-direction: column; /* 默认垂直排列 */
+}
+
+.editor {
+    min-height: 50%;
+    flex-direction: column; /* 垂直排列 */
+    flex: 1; /* 占据父容器的剩余空间 */
+    display: flex;
+    background: linear-gradient(135deg, #ffffff, #f0f0f0); /* 设置渐变背景颜色 */
+    padding: 10px; /* 增加内边距 */
+    border: 1px solid #ccc; /* 优化边框颜色 */
+    border-radius: 10px; /* 增加圆角 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 使用更柔和的阴影 */
+    font-size: 16px; /* 调整字体大小 */
+    color: #333; /* 设置字体颜色 */
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#monaco-editor {
+    border: 1px solid #ddd; /* 设置边框 */
+    background-color: #f0f2f5; /* 设置背景颜色 */
+    padding: 10px; /* 设置内边距 */
+    box-sizing: border-box; /* 使宽高包含内边距和边框 */
+    overflow: hidden;
+}
 
 .uiPanel {
-    display: flex;
-    align-items: center; /* 垂直居中 */
-    justify-content: center; /* 水平居中 */
+    height: 5%;
+    display: flex; /* 使用Flexbox布局 */
+    justify-content: center; /* 水平居中对齐 */
+    align-items: center; /* 垂直居中对齐 */
+    padding: 10px; /* 添加内边距 */
+    border-bottom: 1px solid #ccc; /* 下边框 */
+    position: relative; /* 为按钮的绝对定位提供参考 */
 }
+
+.uiPanel .fullscreen-btn {
+    position: absolute; /* 绝对定位 */
+    left: 10px; /* 距离左边10px */
+    top: 40%; /* 垂直居中 */
+    transform: translateY(-50%); /* 垂直居中调整 */
+}
+
 
 .uiRow {
     margin-bottom: 10px; /* 设置下方的外边距 */
@@ -52,37 +120,14 @@ select {
 }
 
 
-.editGround {
-    width: 50%;
-    margin-right: 10px;
-
-}
-
-
-/* 编辑器样式 */
-.editor {
-    display: block;
-    height: 50%;
-    background: linear-gradient(135deg, #ffffff, #f0f0f0); /* 设置渐变背景颜色 */
-    padding: 10px; /* 增加内边距 */
-    border: 1px solid #ccc; /* 优化边框颜色 */
-    border-radius: 10px; /* 增加圆角 */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 使用更柔和的阴影 */
-    font-size: 16px; /* 调整字体大小 */
-    color: #333; /* 设置字体颜色 */
-    overflow: hidden;
-}
-
-
 .fullscreen {
-    height:auto;
-
+    display: flex;
+    flex: 1;
 }
 
 .hiddenscreen {
-    display: flex;
+    display: none !important;
 }
-
 
 /* 全屏按钮样式 */
 .fullscreen-btn {
@@ -96,5 +141,5 @@ select {
     cursor: pointer;
     padding: 5px; /* 设置内边距 */
     border: 1px solid #ddd; /* 设置边框 */
-    border-radius: 5px; /* 设置圆角 */
 }
+
