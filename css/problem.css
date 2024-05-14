@@ -23,6 +23,7 @@ body {
     flex-direction: row; /* 默认垂直排列 */
     flex-grow: 1; /* 占据剩余空间 */
     box-sizing: border-box;
+    max-height: 100vh;
 }
 
 .problem, .editGround {
