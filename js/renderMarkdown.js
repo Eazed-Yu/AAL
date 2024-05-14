@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.querySelectorAll('.markdown').forEach(elem => {
-        const content = elem.querySelector('#markdown-content').textContent;
+        const content = elem.querySelector('.markdown-content').textContent;
         window.problemDescription = content;
         elem.innerHTML = marked.parse(content);
         renderMathInElement(elem, {
