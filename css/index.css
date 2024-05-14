@@ -51,7 +51,7 @@ body {
 
 .playground {
     width: 100%;
-    height: 4000px; /* 每个 playground 的高度 */
+    height: 3000px; /* 每个 playground 的高度 */
     position: relative; /* 确保 .animation-container 的定位基于它 */
 }
 
