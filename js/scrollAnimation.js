@@ -43,7 +43,7 @@ function updateMap() {
     playGrounds.forEach( playGround => {
 
         const playGroundRect = playGround.getBoundingClientRect();
-        const scrollStart = playGroundRect.top + window.scrollY - 500;
+        const scrollStart = playGroundRect.top + window.scrollY - 1500;
         const scrollEnd = playGroundRect.bottom + window.scrollY - window.innerHeight * 2;
         const container = playGround.querySelector(".animation-container");
         const items = container.children
